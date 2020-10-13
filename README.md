@@ -2,6 +2,8 @@
 
 This is the branch where the testnet implementation will be upgraded, tested and documented. The resulting work will be merged to the "TidyUp" branch.
 
+A decision has been made about scripts: considering that the system is installed from scratch, at least in the vagrant and docker scripts, there makes no sense to use variables to pass the paths and execute scripts, like $HOME, $(pwd), "if type go", etc, because we should know exactly where those executables and paths are. So to make the installation less prone to errors, from this commit on the paths will be hardcoded.
+
 # Test Environment Installation:
 
 - **VAGRANT (preferred)**
@@ -58,6 +60,8 @@ This is the branch where the testnet implementation will be upgraded, tested and
   - Check localhost:22000 to see the block explorer running.
 
   - You can execute `sudo bash bin/start_ethstats.sh` to see ethstats. Open localhost:3000 in a browser.
+
+  - You can send transactions through geth or truffle. Just use a terminal to execute either of them. Alternatively, you can now clone the alastria-lib-example and alastria-lib repositories.
 
   <!-- - Geth 1.9.5. Recommended procedure: -- IS INSTALLED ALONG QUORUM
     ```
