@@ -7,6 +7,8 @@ This is the branch where the testnet implementation will be upgraded, tested and
 - **VAGRANT (preferred)**
 
   - Clone the project
+  - Modify the "commit" parameter in the `vagrant/config/vconfig/vagrant-local-example.yml`. It is recommended to use the same commit this README you are reading belongs to.
+  - You can also modify any other parameter you want. For example, the "ubuntu" parameter.
   - Execute `vagrant up` (currently in the folder `infrastructure/testnet/vagrant-testnet`)
   - Once it finishes building, you have to perform a `vagrant reload`, as it is prompted from console. This is just to reboot the machine, but it works out of the box.
   - Then, you can communicate with the Virtual Machine through `vagrant ssh` command and view the ethstats and the block explorer from [http://localhost:3000](http://localhost:3000) and [http://localhost:8888](http://localhost:8888), respectively.
@@ -14,9 +16,7 @@ This is the branch where the testnet implementation will be upgraded, tested and
 
     You can change the parameters of the virtual machine in `vagrant/config/vconfig/vagrant-local-example.yml` BEFORE the first execution. The parameters are self-explanatory. The recommended parameters are the ones already in place. If you change the ethstats or block_explorer ports, use them instead of the ones in the previous paragraph.
 
-    You can select Ubuntu version by changing the last variable in the previously mentioned file. It is explained right there.
-
-    You are required to have Virtualbox and Vagrant installed into your machine.
+    You must have Virtualbox and Vagrant installed into your machine.
 
     If the `vagrant up` command stops shortly after first execution and there is not any error message, just keep executing it. Vagrant is installing its required plugins.
 
