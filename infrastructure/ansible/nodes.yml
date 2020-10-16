@@ -21,7 +21,8 @@
   - name: Check port of the new nodes
     command: netcat -z -v localhost {{ item.port }}
     with_items: '{{ nodes }}'
-
+    async: 3600
+    poll: 0
   # - name: Generate configuration
   #   template:
   #     src: config.jinja
